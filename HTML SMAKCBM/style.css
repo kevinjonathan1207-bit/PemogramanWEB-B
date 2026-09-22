@@ -1,0 +1,457 @@
+/* ========================================== */
+/* 1. PENGATURAN DASAR & RESET                */
+/* ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ========================================== */
+/* 2. HEADER & LOGO                           */
+/* ========================================== */
+header {
+    background-color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #1e3a8a;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.brand-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.school-logo {
+    height: 60px;
+    width: auto;
+}
+
+/* Nama sekolah memanjang (tidak patah ke bawah) */
+.school-name {
+    font-size: 22px;
+    color: #1e3a8a;
+    white-space: nowrap; 
+}
+
+/* Visi / Motto Sekolah digeser ke bawah & lebih kemas */
+.school-motto {
+    font-size: 13px;
+    color: #555;
+    max-width: 380px;
+    margin-top: 5px; /* Jarak dari atas */
+    line-height: 1.4;
+}
+
+/* ========================================== */
+/* 3. MENU NAVIGASI                           */
+/* ========================================== */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    color: #1e3a8a;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, 
+nav a.active {
+    background-color: #1e3a8a;
+    color: white;
+}
+
+/* ========================================== */
+/* 4. HERO BANNER (KOTAK TRANSPARAN & VISI MISI) */
+/* ========================================== */
+.hero-banner {
+    width: 100%;
+    min-height: 680px; /* Ditinggikan agar muat kotak Visi & Misi secara penuh */
+    background-image: url('smakcb_gedung.jpg');
+    background-size: cover; /* Mengisi penuh area banner */
+    background-repeat: no-repeat;
+    background-position: center bottom; /* Memotong langit & memfokuskan bagian bawah */
+    position: relative;
+}
+
+/* Lapisan Gelap + Kesan Blur Halus */
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    min-height: 680px;
+    background: rgba(0, 0, 0, 0.35); /* Lapisan gelap agar teks terbaca jelas */
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Container untuk Menumpuk Kotak Selamat Datang dan Visi Misi */
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 700px;
+    width: 100%;
+}
+
+/* Style Kotak Transparan */
+.hero-content {
+    text-align: center;
+    color: white;
+    padding: 25px 35px;
+    background: rgba(15, 23, 42, 0.7); /* Kotak transparan gelap */
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 15px;
+    opacity: 0.95;
+}
+
+/* Khusus Tampilan Kotak Visi Misi */
+.vision-mission-box {
+    text-align: left; /* Rata kiri agar mudah dibaca */
+}
+
+.vision-mission-box h3 {
+    text-align: center;
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 8px;
+}
+
+.vm-section {
+    margin-bottom: 15px;
+}
+
+.vm-section h4 {
+    font-size: 15px;
+    color: #93c5fd; /* Warna biru muda untuk sub-judul Visi/Misi */
+    margin-bottom: 5px;
+}
+
+.vm-section p {
+    font-size: 14px;
+    line-height: 1.5;
+    text-transform: none; /* Huruf kapital di awal kata/kalimat saja */
+}
+
+.vm-section ol {
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.vm-section ol li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    text-transform: none; /* Huruf kapital di awal kata/kalimat saja */
+}
+
+/* ========================================== */
+/* 5. KONTEN UTAMA & BERITA                   */
+/* ========================================== */
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.news-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.news-section h2 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+    font-size: 22px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.news-section ul {
+    padding-left: 20px;
+}
+
+.news-section li {
+    margin-bottom: 12px;
+    color: #444;
+}
+
+/* ========================================== */
+/* 6. FOOTER                                  */
+/* ========================================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0f172a;
+    color: white;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+/* ========================================== */
+/* 7. RESPONSIF UNTUK TAMPILAN HP             */
+/* ========================================== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .brand-box {
+        flex-direction: column;
+    }
+
+    .school-name {
+        white-space: normal;
+    }
+
+    .hero-banner, .hero-overlay {
+        min-height: auto;
+        padding: 30px 15px;
+    }
+
+    .hero-content h2 {
+        font-size: 24px;
+    }
+
+    .hero-content p, 
+    .vm-section p, 
+    .vm-section ol li {
+        font-size: 13px;
+    }
+}
+
+/* ========================================== */
+/* KHUSUS HALAMAN PROFIL (2 KOTAK BIRU)       */
+/* ========================================== */
+.page-header {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.page-header h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    font-size: 15px;
+    opacity: 0.9;
+}
+
+/* Container Dua Kotak Berdampingan */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Style Kotak Biru Sederhana */
+.blue-box {
+    flex: 1;
+    background-color: #1e3a8a; /* Warna biru utama */
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blue-box h3 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.blue-box ul {
+    list-style: none; /* Menghilangkan titik bulatan/emotikon */
+    padding: 0;
+}
+
+.blue-box li {
+    font-size: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
+}
+
+.blue-box li:last-child {
+    border-bottom: none;
+}
+
+/* Responsif untuk HP (Kotak menumpuk ke bawah) */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+    }
+}
+
+/* ========================================== */
+/* KHUSUS HALAMAN KONTAK                      */
+/* ========================================== */
+.contact-header {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.contact-header h2 {
+    font-size: 32px;
+    color: #1e3a8a;
+    font-weight: 700;
+}
+
+/* Garis kuning aksen di bawah judul */
+.yellow-line {
+    width: 60px;
+    height: 4px;
+    background-color: #eab308;
+    margin: 8px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Kartu Pembungkus Kontak */
+.contact-card {
+    background: white;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 35px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.contact-card h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* Item List Alamat, Telp, Email */
+.contact-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-icon {
+    font-size: 20px;
+    color: #1e3a8a;
+    margin-top: 3px;
+    width: 25px;
+    text-align: center;
+}
+
+.contact-item p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* Area Media Sosial */
+.social-section {
+    border-top: 1px solid #e2e8f0;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-section h4 {
+    font-size: 16px;
+    color: #333;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+/* Tombol Ikon Medsos */
+.social-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* Warna Masing-Masing Medsos */
+.social-btn.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.social-btn.youtube {
+    background-color: #ff0000;
+}
+
+.social-btn.facebook {
+    background-color: #1877f2;
+}
