@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login & Register</title>
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #fff;
+    }
+
+    /* Sisi kiri: gambar pegunungan */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(180deg, #1a3a9c 0%, #3a6fe0 100%);
+    }
+    .hero svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Sisi kanan: form */
+    .form-side {
+      min-height: 100vh;
+    }
+    .form-box {
+      width: 100%;
+      max-width: 440px;
+    }
+
+    /* Garis warna-warni seperti pada contoh sign up */
+    .rainbow {
+      height: 4px;
+      border-radius: 4px;
+      background: linear-gradient(90deg,
+        #b5d36a 0%, #ecf2b5 15%, #f2c261 30%, #e0705f 45%,
+        #c9a0dc 60%, #6f8fd8 80%, #7cbde0 100%);
+    }
+
+    .btn-main {
+      background-color: #4f6ef7;
+      border-color: #4f6ef7;
+      color: #fff;
+    }
+    .btn-main:hover {
+      background-color: #3d5ce0;
+      border-color: #3d5ce0;
+      color: #fff;
+    }
+
+    .nav-pills .nav-link {
+      color: #4f6ef7;
+    }
+    .nav-pills .nav-link.active {
+      background-color: #4f6ef7;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row g-0">
+
+      <!-- GAMBAR (kiri) -->
+      <div class="col-lg-6 d-none d-lg-block">
+        <div class="hero">
+          <svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustrasi pegunungan biru berkabut">
+            <!-- gunung belakang ke depan -->
+            <path d="M0 250 L60 170 L120 230 L190 130 L260 220 L320 160 L400 240 L400 600 L0 600Z" fill="#6f9be8"/>
+            <path d="M0 330 L80 240 L150 320 L230 210 L310 310 L370 260 L400 300 L400 600 L0 600Z" fill="#3f6fd6"/>
+            <path d="M0 430 L90 340 L170 420 L260 330 L350 430 L400 390 L400 600 L0 600Z" fill="#2450b5"/>
+            <path d="M0 520 L100 450 L200 530 L300 460 L400 520 L400 600 L0 600Z" fill="#173a8f"/>
+
+            <!-- awan -->
+            <g fill="#fff">
+              <g opacity="0.95">
+                <ellipse cx="95" cy="125" rx="45" ry="13"/>
+                <ellipse cx="120" cy="115" rx="28" ry="12"/>
+              </g>
+              <g opacity="0.9">
+                <ellipse cx="190" cy="290" rx="70" ry="14"/>
+                <ellipse cx="215" cy="278" rx="40" ry="13"/>
+                <ellipse cx="150" cy="282" rx="30" ry="11"/>
+              </g>
+              <g opacity="0.85">
+                <ellipse cx="320" cy="270" rx="55" ry="12"/>
+                <ellipse cx="345" cy="260" rx="28" ry="10"/>
+              </g>
+              <g opacity="0.8">
+                <ellipse cx="70" cy="420" rx="50" ry="11"/>
+                <ellipse cx="270" cy="500" rx="60" ry="12"/>
+                <ellipse cx="295" cy="490" rx="30" ry="10"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- FORM (kanan) -->
+      <div class="col-lg-6">
+        <div class="form-side d-flex align-items-center justify-content-center p-4">
+          <div class="form-box">
+
+            <h2 class="fw-bold mb-1">Welcome!</h2>
+            <p class="text-muted">It's free and always will be.</p>
+
+            <!-- Tab Login / Register -->
+            <ul class="nav nav-pills nav-fill mb-3" id="authTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="login-tab" data-bs-toggle="pill" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Sign In</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="register-tab" data-bs-toggle="pill" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">Register</button>
+              </li>
+            </ul>
+
+            <div class="rainbow mb-4"></div>
+
+            <div class="tab-content">
+
+              <!-- FORM LOGIN -->
+              <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab" tabindex="0">
+                <form id="loginForm" class="needs-validation" novalidate>
+                  <div class="mb-3">
+                    <label for="loginEmail" class="form-label visually-hidden">Email address</label>
+                    <input type="email" class="form-control form-control-lg" id="loginEmail" placeholder="Email address" required>
+                    <div class="invalid-feedback">Masukkan email yang valid.</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="loginPassword" class="form-label visually-hidden">Password</label>
+                    <input type="password" class="form-control form-control-lg" id="loginPassword" placeholder="Password" required>
+                    <div class="invalid-feedback">Password wajib diisi.</div>
+                  </div>
+
+                  <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="remember">
+                    <label class="form-check-label" for="remember">Remember password</label>
+                  </div>
+
+                  <button type="submit" class="btn btn-main btn-lg w-100 fw-semibold">SIGN IN</button>
+
+                  <div class="text-center mt-3">
+                    <a href="#" class="small">Forgot password?</a>
+                  </div>
+                </form>
+              </div>
+
+              <!-- FORM REGISTER -->
+              <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab" tabindex="0">
+                <form id="registerForm" class="needs-validation" novalidate>
+                  <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                      <input type="text" class="form-control form-control-lg" placeholder="First Name" aria-label="First Name" required>
+                      <div class="invalid-feedback">Wajib diisi.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control form-control-lg" placeholder="Last Name" aria-label="Last Name" required>
+                      <div class="invalid-feedback">Wajib diisi.</div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg" placeholder="Display Name" aria-label="Display Name" required>
+                    <div class="invalid-feedback">Wajib diisi.</div>
+                  </div>
+
+                  <div class="mb-3">
+                    <input type="email" class="form-control form-control-lg" placeholder="Email Address" aria-label="Email Address" required>
+                    <div class="invalid-feedback">Masukkan email yang valid.</div>
+                  </div>
+
+                  <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                      <input type="password" class="form-control form-control-lg" id="regPassword" placeholder="Password" aria-label="Password" minlength="6" required>
+                      <div class="invalid-feedback">Minimal 6 karakter.</div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="password" class="form-control form-control-lg" id="regConfirm" placeholder="Confirm Password" aria-label="Confirm Password" required>
+                      <div class="invalid-feedback" id="confirmFeedback">Password tidak sama.</div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex align-items-start gap-3 mb-3">
+                    <div class="form-check border rounded px-5 py-2">
+                      <input class="form-check-input" type="checkbox" id="agree" required>
+                      <label class="form-check-label" for="agree">I Agree</label>
+                    </div>
+                    <small class="text-muted">
+                      By clicking <span class="badge text-bg-primary">Register</span>, you agree to the
+                      <a href="#">Terms and Conditions</a> set out by this site, including our Cookie Use.
+                    </small>
+                  </div>
+
+                  <div class="rainbow mb-4"></div>
+
+                  <div class="row g-3">
+                    <div class="col-6">
+                      <button type="submit" class="btn btn-primary btn-lg w-100">Register</button>
+                    </div>
+                    <div class="col-6">
+                      <button type="button" class="btn btn-success btn-lg w-100" id="toLogin">Sign In</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Validasi form memakai class bawaan Bootstrap
+    document.querySelectorAll('.needs-validation').forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Cek konfirmasi password pada form register
+        if (form.id === 'registerForm') {
+          var pass = document.getElementById('regPassword');
+          var confirm = document.getElementById('regConfirm');
+          if (pass.value !== confirm.value) {
+            confirm.setCustomValidity('Password tidak sama');
+          } else {
+            confirm.setCustomValidity('');
+          }
+        }
+
+        if (form.checkValidity()) {
+          alert(form.id === 'loginForm' ? 'Login berhasil!' : 'Registrasi berhasil!');
+          form.reset();
+          form.classList.remove('was-validated');
+        } else {
+          form.classList.add('was-validated');
+        }
+      });
+    });
+
+    // Tombol "Sign In" di form register pindah ke tab login
+    document.getElementById('toLogin').addEventListener('click', function () {
+      bootstrap.Tab.getOrCreateInstance(document.getElementById('login-tab')).show();
+    });
+  </script>
+</body>
+</html>
