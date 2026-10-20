@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form Registrasi Mahasiswa</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 16px;
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #212529;
+      background-color: #ffffff;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 24px;
+      font-size: 28px;
+      font-weight: 500;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .form-control {
+      display: block;
+      width: 100%;
+      height: 46px;
+      padding: 6px 14px;
+      font-size: 16px;
+      font-family: inherit;
+      color: #495057;
+      background-color: #ffffff;
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+    }
+
+    .form-control::placeholder {
+      color: #6c757d;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: #80bdff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    }
+
+    .form-text {
+      display: block;
+      margin-top: 4px;
+      font-size: 14px;
+      color: #6c757d;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      font-size: 16px;
+      font-family: inherit;
+      color: #ffffff;
+      background-color: #0b5ca8;
+      border: 1px solid #0b5ca8;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #094a88;
+    }
+
+    .btn:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(11, 92, 168, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Form Registrasi Mahasiswa</h1>
+
+    <form id="formRegistrasi" novalidate>
+
+      <div class="form-group">
+        <label for="nama">Nama Mahasiswa</label>
+        <input type="text" id="nama" class="form-control"
+               list="daftarNama" placeholder="Masukkan Nama"
+               autocomplete="off">
+        <datalist id="daftarNama">
+          <option value="Kevin Jonathan">
+        </datalist>
+        <small class="form-text">Ketik beberapa huruf, rekomendasi nama akan muncul.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="nim">NIM</label>
+        <input type="text" id="nim" class="form-control" placeholder="Nomor Induk Mahasiswa">
+      </div>
+
+      <div class="form-group">
+        <label for="jurusan">Jurusan</label>
+        <select id="jurusan" class="form-control">
+          <option value="">Pilih Jurusan</option>
+          <option value="Teknik Informatika">Teknik Informatika</option>
+          <option value="Teknik Elektro">Teknik Elektro</option>
+          <option value="Teknik Sipil">Teknik Sipil</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="matkul">Mata Kuliah</label>
+        <input type="text" id="matkul" class="form-control" placeholder="Nama mata kuliah">
+      </div>
+
+      <div class="form-group">
+        <label for="dosen">Dosen</label>
+        <input type="text" id="dosen" class="form-control" placeholder="Nama dosen pengampu">
+      </div>
+
+      <button type="submit" class="btn">Submit</button>
+
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
