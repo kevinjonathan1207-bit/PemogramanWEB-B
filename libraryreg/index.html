@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LibraryReg - Pendaftaran Anggota Perpustakaan</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&display=swap" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body data-page="beranda" data-bs-spy="scroll" data-bs-target="#navUtama" data-bs-offset="80" tabindex="0">
+
+  <div id="layout-nav"></div>
+
+  <main>
+    <!-- BERANDA: HERO -->
+    <header class="hero" id="beranda">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <h1>Daftar anggota perpustakaan kini cukup lewat satu formulir online</h1>
+            <p class="lead mt-3">Tidak perlu antre dan mengisi formulir kertas. Isi data Anda, dapatkan keanggotaan, dan mulai gunakan layanan perpustakaan.</p>
+            <div class="d-flex flex-wrap gap-2 mt-4">
+              <a href="pendaftaran.html" class="btn btn-teal btn-lg"><i class="bi bi-person-plus-fill me-2"></i>Daftar Sekarang</a>
+              <a href="#layanan" class="btn btn-outline-teal btn-lg">Lihat Layanan</a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <!-- Ilustrasi kartu anggota -->
+            <div class="member-card" aria-hidden="true">
+              <div class="card-top"><strong>Kartu Anggota</strong><i class="bi bi-journal-bookmark-fill fs-5"></i></div>
+              <div class="card-body-x">
+                <div class="photo"><i class="bi bi-person-fill"></i></div>
+                <div class="flex-grow-1">
+                  <div class="line" style="width:85%"></div>
+                  <div class="line" style="width:60%"></div>
+                  <div class="line mb-0" style="width:70%"></div>
+                </div>
+              </div>
+              <div class="card-foot"><span>NIM/NIP: 000000000</span><span>Mahasiswa</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- STATISTIK ILUSTRATIF -->
+    <div class="stats">
+      <div class="container">
+        <div class="row text-center g-3">
+          <div class="col-6 col-md-3"><div class="num">50.000+</div><small>Koleksi buku dan e-book</small></div>
+          <div class="col-6 col-md-3"><div class="num">10.000+</div><small>Anggota terdaftar</small></div>
+          <div class="col-6 col-md-3"><div class="num">1.200+</div><small>Judul jurnal</small></div>
+          <div class="col-6 col-md-3"><div class="num">6 hari</div><small>Layanan setiap pekan</small></div>
+        </div>
+        <p class="text-center mb-0 mt-3 small">Angka di atas adalah data ilustrasi.</p>
+      </div>
+    </div>
+
+    <!-- KEUNGGULAN DAN FASILITAS -->
+    <section class="block" id="keunggulan">
+      <div class="container">
+        <h2 class="section-title">Keunggulan dan fasilitas</h2>
+        <p class="text-muted-ink mb-4">Hal yang Anda dapatkan setelah menjadi anggota.</p>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3"><div class="card item p-3"><div class="icon-box"><i class="bi bi-lightning-charge-fill"></i></div><h3 class="h5">Pendaftaran cepat</h3><p class="mb-0 text-muted-ink">Isi formulir online tanpa antre di loket.</p></div></div>
+          <div class="col-md-6 col-lg-3"><div class="card item p-3"><div class="icon-box"><i class="bi bi-collection-fill"></i></div><h3 class="h5">Koleksi lengkap</h3><p class="mb-0 text-muted-ink">Buku cetak, e-book, dan jurnal untuk berbagai bidang studi.</p></div></div>
+          <div class="col-md-6 col-lg-3"><div class="card item p-3"><div class="icon-box"><i class="bi bi-people-fill"></i></div><h3 class="h5">Untuk semua sivitas</h3><p class="mb-0 text-muted-ink">Terbuka bagi mahasiswa, dosen, dan tenaga kependidikan.</p></div></div>
+          <div class="col-md-6 col-lg-3"><div class="card item p-3"><div class="icon-box"><i class="bi bi-wifi"></i></div><h3 class="h5">Ruang nyaman</h3><p class="mb-0 text-muted-ink">Ruang baca, ruang diskusi, dan akses Wi-Fi.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TENTANG PERPUSTAKAAN -->
+    <section class="block alt" id="tentang">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <h2 class="section-title">Tentang perpustakaan</h2>
+            <p class="text-muted-ink">Perpustakaan perguruan tinggi ini menyediakan sumber belajar untuk mendukung kegiatan perkuliahan, penelitian, dan pengembangan diri. LibraryReg dibuat agar proses menjadi anggota lebih cepat dan datanya lebih tertib.</p>
+            <p class="text-muted-ink mb-0">Data anggota yang tercatat rapi memudahkan petugas mencari informasi dan menyiapkan kartu anggota.</p>
+          </div>
+          <div class="col-lg-6">
+            <div class="row g-3">
+              <div class="col-sm-6"><div class="card item p-3"><h3 class="h6"><i class="bi bi-bullseye text-success me-2"></i>Visi</h3><p class="mb-0 small text-muted-ink">Menjadi pusat sumber belajar yang mudah diakses oleh seluruh sivitas akademika.</p></div></div>
+              <div class="col-sm-6"><div class="card item p-3"><h3 class="h6"><i class="bi bi-flag-fill text-success me-2"></i>Misi</h3><p class="mb-0 small text-muted-ink">Menyediakan koleksi, layanan, dan fasilitas yang mendukung belajar dan penelitian.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAYANAN -->
+    <section class="block" id="layanan">
+      <div class="container">
+        <h2 class="section-title">Layanan perpustakaan</h2>
+        <p class="text-muted-ink mb-4">Layanan yang dapat Anda gunakan setelah terdaftar sebagai anggota.</p>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4"><div class="card item p-3"><div class="icon-box"><i class="bi bi-card-checklist"></i></div><h3 class="h5">Keanggotaan</h3><p class="mb-0 text-muted-ink">Pendaftaran anggota dan pembuatan kartu anggota.</p></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card item p-3"><div class="icon-box"><i class="bi bi-arrow-left-right"></i></div><h3 class="h5">Sirkulasi</h3><p class="mb-0 text-muted-ink">Peminjaman dan pengembalian buku di meja layanan.</p></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card item p-3"><div class="icon-box"><i class="bi bi-book-half"></i></div><h3 class="h5">Ruang baca</h3><p class="mb-0 text-muted-ink">Tempat membaca dan belajar yang tenang.</p></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card item p-3"><div class="icon-box"><i class="bi bi-question-circle-fill"></i></div><h3 class="h5">Layanan referensi</h3><p class="mb-0 text-muted-ink">Bantuan pustakawan untuk mencari sumber informasi.</p></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card item p-3"><div class="icon-box"><i class="bi bi-laptop"></i></div><h3 class="h5">Sumber digital</h3><p class="mb-0 text-muted-ink">Akses e-book dan jurnal elektronik.</p></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card item p-3"><div class="icon-box"><i class="bi bi-chat-square-text-fill"></i></div><h3 class="h5">Ruang diskusi</h3><p class="mb-0 text-muted-ink">Ruang untuk belajar dan diskusi kelompok.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AJAKAN -->
+    <section class="cta">
+      <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+        <div>
+          <h2 class="h3 mb-1">Belum menjadi anggota?</h2>
+          <p class="mb-0">Pendaftaran hanya membutuhkan beberapa menit.</p>
+        </div>
+        <a href="pendaftaran.html" class="btn btn-light btn-lg text-nowrap">Daftar Sekarang</a>
+      </div>
+    </section>
+  </main>
+
+  <div id="layout-footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/layout.js"></script>
+</body>
+</html>

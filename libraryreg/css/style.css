@@ -1,0 +1,69 @@
+:root {
+  --ink: #17302b;
+  --teal: #0f766e;
+  --teal-dark: #0b5a54;
+  --mint: #e6f2f0;
+  --amber: #f2b84b;
+  --paper: #ffffff;
+  --muted: #55655f;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { color: var(--ink); background: var(--paper); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+h1, h2, h3, .brand-name { font-family: "Lora", Georgia, serif; color: var(--ink); }
+.text-muted-ink { color: var(--muted); }
+
+/* Navbar */
+.navbar { background: var(--paper); border-bottom: 1px solid #dbe5e2; }
+.brand-name { font-weight: 700; font-size: 1.3rem; }
+.brand-icon { color: var(--teal); }
+.navbar .nav-link { color: var(--ink); font-weight: 500; border-bottom: 2px solid transparent; }
+.navbar .nav-link:hover { color: var(--teal); }
+.navbar .nav-link.active { color: var(--teal); border-bottom-color: var(--teal); }
+.btn-teal { background: var(--teal); color: #fff; border: 0; }
+.btn-teal:hover { background: var(--teal-dark); color: #fff; }
+.btn-outline-teal { border: 1px solid var(--teal); color: var(--teal); }
+.btn-outline-teal:hover { background: var(--teal); color: #fff; }
+.btn:focus-visible, .nav-link:focus-visible, a:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+/* Hero */
+.hero { background: var(--mint); padding: 4.5rem 0; }
+.hero h1 { font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1.2; font-weight: 700; }
+.hero p.lead { max-width: 34rem; color: var(--muted); }
+
+/* Kartu anggota (ilustrasi hero) */
+.member-card { max-width: 380px; margin-inline: auto; background: var(--paper); border-radius: 16px; border: 1px solid #c8d8d4; box-shadow: 0 10px 30px rgba(23, 48, 43, .12); overflow: hidden; transform: rotate(-2deg); }
+.member-card .card-top { background: var(--teal); color: #fff; padding: .9rem 1.2rem; display: flex; justify-content: space-between; align-items: center; }
+.member-card .card-top strong { font-family: "Lora", Georgia, serif; }
+.member-card .card-body-x { padding: 1.2rem; display: flex; gap: 1rem; align-items: center; }
+.member-card .photo { width: 76px; height: 92px; border-radius: 8px; background: var(--mint); color: var(--teal); display: grid; place-items: center; font-size: 2.6rem; flex-shrink: 0; }
+.member-card .line { height: 10px; border-radius: 5px; background: #dbe5e2; margin-bottom: .6rem; }
+.member-card .card-foot { border-top: 1px dashed #c8d8d4; padding: .7rem 1.2rem; display: flex; justify-content: space-between; font-size: .8rem; color: var(--muted); }
+
+/* Statistik */
+.stats { background: var(--ink); color: #fff; padding: 2rem 0; }
+.stats .num { font-family: "Lora", Georgia, serif; font-size: 2rem; font-weight: 700; color: var(--amber); }
+.stats small { color: #c6d6d2; }
+
+/* Section umum */
+section.block { padding: 4rem 0; }
+section.alt { background: #f4f8f7; }
+.section-title { font-size: 1.9rem; font-weight: 700; margin-bottom: .5rem; }
+.icon-box { width: 52px; height: 52px; border-radius: 12px; background: var(--mint); color: var(--teal); display: grid; place-items: center; font-size: 1.5rem; margin-bottom: 1rem; }
+.card.item { border: 1px solid #dbe5e2; border-radius: 12px; height: 100%; }
+
+/* CTA & Footer */
+.cta { background: var(--teal); color: #fff; padding: 3rem 0; }
+.cta h2 { color: #fff; }
+footer { background: var(--ink); color: #c6d6d2; padding: 3rem 0 1.5rem; }
+footer h3 { color: #fff; font-size: 1.1rem; }
+footer a { color: #c6d6d2; text-decoration: none; }
+footer a:hover { color: #fff; text-decoration: underline; }
+
+/* Halaman dalam */
+.page-head { background: var(--mint); padding: 2rem 0; border-bottom: 1px solid #c8d8d4; }
+.panel { background: var(--paper); border: 1px solid #dbe5e2; border-radius: 12px; padding: 1.5rem; }
+.form-label.req::after { content: " *"; color: #b42318; }
+.table thead th { background: var(--mint); color: var(--ink); white-space: nowrap; }
+.table td { vertical-align: middle; }
+.form-control:focus, .form-select:focus { border-color: var(--teal); box-shadow: 0 0 0 .2rem rgba(15, 118, 110, .2); }
+.login-wrap { min-height: 70vh; display: grid; place-items: center; padding: 3rem 0; }
